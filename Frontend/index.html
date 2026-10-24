@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Number Guess</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<main class="game" id="game">
+  <h1>Guess the number</h1>
+  <p class="sub">I'm thinking of a number from 0 to 99.</p>
+
+  <section class="meter" aria-label="Possible range">
+    <div class="track" id="track">
+      <div class="window" id="window"></div>
+    </div>
+    <p class="range-text">It's between <strong id="lo">0</strong> and <strong id="hi">99</strong></p>
+  </section>
+
+  <form id="guessForm" autocomplete="off">
+    <label for="guessInput" class="sr-only">Your guess</label>
+    <input id="guessInput" type="number" inputmode="numeric" min="0" max="99" placeholder="?" required>
+    <button type="submit" id="guessBtn" class="btn btn-main">Guess</button>
+  </form>
+
+  <p id="message" class="message" role="status" aria-live="polite">Type a number and press Guess.</p>
+
+  <div class="stats">
+    <span>Attempts <strong id="attempts">0</strong></span>
+    <ul id="history" class="history" aria-label="Your guesses"></ul>
+  </div>
+
+  <div class="actions">
+    <button type="button" id="giveUpBtn" class="btn btn-ghost">Give up</button>
+    <button type="button" id="againBtn" class="btn btn-main" hidden>Play again</button>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

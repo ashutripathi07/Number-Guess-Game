@@ -2,7 +2,7 @@
 // Local testing: "http://localhost:8080"
 // After deploying the backend, change this to your Render URL,
 // e.g. "https://number-guess-api.onrender.com"
-const API_BASE = "https://number-guess-game-ne2u.onrender.com/";
+const API_BASE = "https://number-guess-game-ne2u.onrender.com".replace(/\/+$/, "");
 
 // Every browser tab gets its own game on the server
 const gameId = crypto.randomUUID();
